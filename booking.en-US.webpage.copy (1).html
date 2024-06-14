@@ -1,0 +1,955 @@
+<meta name="viewport" content="width=device-width" />
+
+<style>
+  /* INPUT PROPS */
+  .modalinputs {
+    border-bottom: 1px solid;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+  }
+
+  /* MODAL 1 */
+  .modal1 {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content1 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    padding: 2% 6%;
+  }
+
+  .close1 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -13px -77px;
+  }
+
+  /* MODAL 2 */
+  .modal2 {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    padding: 2% 6%;
+  }
+
+  .close2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -13px -77px;
+  }
+
+  /* MODAL 3 */
+  .modal3 {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content3 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    padding: 2% 6%;
+  }
+
+  .close3 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -13px -77px;
+  }
+
+  /* MODAL 4 */
+  .modal4 {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content4 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    padding: 2% 6%;
+  }
+
+  .close4 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -13px -77px;
+  }
+
+  .close1:hover {
+    cursor: pointer;
+  }
+
+  .close2:hover {
+    cursor: pointer;
+  }
+
+  .close3:hover {
+    cursor: pointer;
+  }
+
+  .close4:hover {
+    cursor: pointer;
+  }
+
+  #customdiv a {
+    text-decoration: underline !important;
+    color: blue !important;
+  }
+
+  #customdiv a:hover {
+    cursor: pointer !important;
+  }
+
+  @media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+    .modal-content3 {
+      background-color: #fefefe !important;
+      width: 92% !important;
+      padding: 6% 8% !important;
+      margin: auto auto !important;
+    }
+
+    .close3 {
+      color: #aaaaaa !important;
+      float: right !important;
+      font-size: 28px !important;
+      font-weight: bold !important;
+      margin: -25px !important;
+    }
+  }
+</style>
+
+<div class="row sectionBlockLayout text-start"
+  style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+  <div class="container" style="display: flex; flex-wrap: wrap;">
+    <div class="col-lg-12 columnBlockLayout"
+      style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word; padding: 16px; margin: 60px 0px;">
+      {% entityform name: 'Booking Form' %}</div>
+  </div>
+</div>
+
+<!-- MODAL1 -->
+<div id="myModal1" class="modal1" style="display: none;">
+  <div class="modal-content1"><span id="close1" class="close1">×</span>
+
+    <div id="pdf1">
+      <div class="container p-4">
+        <!-- #region HEADER -->
+        <div class="row">
+          <div class="col-12 text-center border border-secondary">
+            <p style="font-weight: bold;">CONSENT AND RELEASE FORM – OPTION 1</p>
+            <span>“I remain in the Premise”</span>
+          </div>
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region MIDDLE SECTION -->
+        <div class="row">
+          <div class="col-12">
+            <p class="mt-5">
+              Reference is made to the Maintenance and Repair Notice dated <span id="field1modal1"
+                class="modalinputs"></span>, 2024.
+            </p>
+            <p>
+              I, <span id="field2modal1" class="modalinputs"></span>, a <span id="field3modal1"
+                class="modalinputs"></span> citizen (the “Tenant”), Tenant of unit <span id="field4modal1"
+                class="modalinputs"></span> located at
+              <span style="font-size: 16px;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+              (the “Premise”)
+              consent to the
+              maintenance
+              and
+              repair
+              works consisting of (such as but not limited to) (i) addressing the waterproofing in wet
+              areas
+              and
+              water
+              supply lines, (ii) detecting and treating mold formation and infestation and (iii)
+              replacing
+              any
+              identified affected surface during the Maintenance and Repair Period.
+            </p>
+            <p>
+              I hereby confirm that I have selected Option 1 according to which I decide to remain in
+              the
+              Premise
+              during the maintenance and repair works.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Therefore, I accept the following as full and final compensation and settlement in
+              relation
+              to
+              the
+              inconvenience caused by the maintenance and repair works:
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              the Rent during the Maintenance and Repair Period will be waived in full by the Landlord
+              and
+              the
+              corresponding Utilities will be reimbursed using the following formula: U=(Monthly
+              Utility
+              Bill
+              )/31
+              x Maintenance and Repair Period.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>I agree and consent to:</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">1)</div>
+          <div class="col-11">remain in the Premise during the maintenance and repair works and understand
+            any
+            and
+            all
+            disagreement in relation to, connected to or deriving from such maintenance and repair
+            works.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">2)</div>
+          <div class="col-11">grant access to the Premise to the Landlord’s nominated contractor(s) during
+            the
+            Maintenance and Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">3)</div>
+          <div class="col-11">facilitate the maintenance and repair works and not prevent or caused to
+            prevent
+            the
+            Landlord’s nominated contractor(s) from performing or completing the maintenance and repair
+            works
+            during
+            the Maintenance and Repair Period. </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">4)</div>
+          <div class="col-11">the water and equipment OUTAGE in all the wet areas (such as but not limited
+            to
+            WC,
+            showers, kitchen, sinks etc) during the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row my-3">
+          <div class="col-12">I further understand and accept: </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">5)</div>
+          <div class="col-11">the assumption of risk and I expressly and voluntarily assume all risk of
+            personal
+            injury or property damage sustained while remaining in the Premise during the maintenance
+            and
+            repair
+            work whether such risk is foreseen or unforeseen, contemplated or not contemplated and
+            whether
+            or
+            not
+            caused by the negligence or other fault of the Landlord or the Landlord’s nominated
+            contractor(s).
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">6)</div>
+          <div class="col-11">to remain responsible for removing any valuable items (laptops, jewellery,
+            money
+            etc). The Landlord shall not be responsible for the loss of Property. </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">7)</div>
+          <div class="col-11">To indemnify, defend and hold harmless the Landlord for any penalties,
+            losses,
+            damages, costs and expenses (including attorney’s fees) arising out of or in connection with
+            my
+            use
+            and
+            occupancy of the Premise during the maintenance and repair works and any of my act or
+            omission
+            in
+            relation to the obstruction of the maintenance and repair works and/or the Landlord’s
+            nominated
+            contractor(s).</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">8)</div>
+          <div class="col-11">that to the fullest extent permissible by law, in no event shall the
+            Landlord be
+            liable to me for any incidental, consequential, or indirect damages arising out of the
+            maintenance
+            and
+            repair works and my use and occupancy of the Premise. In no event shall landlord’s total
+            liability
+            to me
+            for all damages, losses and causes of action whether in contract, tort (including his own
+            negligence) or
+            under any other legal theory (including strict liability) exceed the amount of rent payable
+            or
+            paid
+            by
+            me and corresponding to the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">9)</div>
+          <div class="col-11">To irrevocably and unconditionally release, cancel, and forever discharge
+            the
+            Landlord and its directors, officers, employees, subsidiaries, affiliates, agents, and
+            representatives
+            from any and all claims, complaints, causes of action, demands, damages, obligations,
+            liabilities,
+            losses, promises, agreements, controversies, penalties, expenses, and executions of any kind
+            or
+            nature
+            whatsoever, whether known or unknown, actual or potential, whether arising in law or in
+            equity,
+            which I
+            may have, may have had, or may in the future obtain, arising out of or relating to (i) the
+            maintenance
+            and repair works, (ii) the Maintenance and Repair Notice and (iii) the underlying facts that
+            have
+            led to
+            the maintenance and repair works.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">10)</div>
+          <div class="col-11">to refrain from any disparagement, criticism, defamation, slander of the
+            Landlord,
+            or tortious interference with the business of the Landlord. I further agrees I will not
+            disparage or
+            publish or disseminate information, whether oral or written (which includes, but is not
+            limited
+            to,
+            statements made directly, indirectly or through any third person on or through any online,
+            social
+            media,
+            electronic, digital, or other media), that is derogatory in any manner to the Landlord or
+            its
+            business
+            or its reputation. I also agree to remove any previously published disparagement, criticism,
+            defamation,
+            slander of the Landlord whether oral or written (which includes, but is not limited to,
+            statements
+            made
+            directly, indirectly or through any third person on or through any online, social media,
+            electronic,
+            digital, or other media), that is derogatory in any manner to any the Landlord or its
+            business
+            or
+            its
+            reputation.</div>
+        </div>
+
+        <!-- #endregion -->
+
+        <!-- #region FOOTER -->
+        <div class="row">
+          <div class="col-12 text-left border border-secondary">
+            <input type="checkbox" name="agree" id="checkbox1modal1" value="1" class="mb-3"
+              onclick='handleClickTandC(this);'>
+            I consent &amp; agree
+            <br>
+            <span>Name : </span>
+          </div>
+        </div>
+        <!-- #endregion -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL2 -->
+<div id="myModal2" class="modal2" style="display: none;">
+  <div class="modal-content2"><span id="close2" class="close2">×</span>
+    <div id="pdf2">
+      <div class="container p-4">
+        <!-- #region HEADER -->
+        <div class="row">
+          <div class="col-12 text-center border border-secondary">
+            <p style="font-weight: bold;">CONSENT AND RELEASE FORM – OPTION 2</p>
+            <span>“Landlord provides accommodation”</span>
+          </div>
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region MIDDLE SECTION -->
+        <div class="row">
+          <div class="col-12">
+            <p class="mt-5">
+              Reference is made to the Maintenance and Repair Notice dated <span id="field1modal2"
+                class="modalinputs"></span>, 2024.
+            </p>
+            <p>
+              I, <span id="field2modal2" class="modalinputs"></span>, a <span id="field3modal2"
+                class="modalinputs"></span> citizen (the “Tenant”), Tenant of unit <span id="field4modal2"
+                class="modalinputs"></span> located at
+              <span style="font-size: 16px;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+              (the “Premise”)
+              consent to the maintenance and repair works consisting of (such as but not limited to)
+              (i) addressing the waterproofing in wet areas and water supply lines, (ii) detecting and
+              treating mold formation and infestation and (iii) replacing any identified affected
+              surface during the Maintenance and Repair Period.
+            </p>
+            <p>
+              I hereby confirm that I have selected Option 2 according to which I accept to be
+              relocated to one of the Landlord’s hotel apartment partners (the “Accommodation Venue”)
+              during the maintenance and repair works.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Therefore, I accept the following as full and final compensation and settlement in
+              relation to the inconvenience caused by (i) the relocation and (ii) the maintenance and
+              repair works:
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-start">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              the accommodation cost during the Maintenance and Repair Period will be borne by the
+              Landlord; and
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              the corresponding Utilities will be reimbursed using the following formula: U=(Monthly
+              Utility Bill )/31 x Maintenance and Repair Period.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>I agree and consent to:</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">1)</div>
+          <div class="col-11">1) vacate the Premise before the Maintenance and Repair Period start date
+            and understand that I shall not access the Premise during the Maintenance and Repair Period
+            without prior approval of the Landlord;
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">2)</div>
+          <div class="col-11">2) comply with the rules and guidelines of the Accommodation Venue and
+            accept to be bound by the Accommodation Venue terms and conditions. I shall bear all
+            responsibility in relation to any damage caused to the Accommodation Venue.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">3)</div>
+          <div class="col-11">all disagreement in relation to, connected to or deriving from such
+            relocation and maintenance and repair works.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">4)</div>
+          <div class="col-11">grant access to the Premise to the Landlord’s nominated contractor(s)
+            during the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">5)</div>
+          <div class="col-11">facilitate the maintenance and repair works and not prevent or caused to
+            prevent the Landlord’s nominated contractor from performing or completing the maintenance
+            and repair works during the Maintenance and Repair Period. </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">6)</div>
+          <div class="col-11"> the water and equipment OUTAGE in all the wet areas (such as but not
+            limited to WC, showers, kitchen, sinks etc) during the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row my-3">
+          <div class="col-12">I further understand and accept: </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">7)</div>
+          <div class="col-11">7) the assumption of risk and I expressly and voluntarily assume all risk of
+            personal injury or property damage sustained if I enter the Premise during the maintenance
+            and repair work whether such risk is foreseen or unforeseen, contemplated or not
+            contemplated and whether or not caused by the negligence or other fault of the Landlord or
+            the Landlord’s nominated contractor(s).
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">8)</div>
+          <div class="col-11">to remain responsible for removing any valuable items (laptops, jewellery,
+            money
+            etc). The Landlord shall not be responsible for the loss of Property. </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">9)</div>
+          <div class="col-11"></div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">10)</div>
+          <div class="col-11">that to the fullest extent permissible by law, in no event shall the
+            Landlord be liable to me for any incidental, consequential, or indirect damages arising out
+            of the maintenance and repair works, me accessing (with or without the Landlord’s approval)
+            the premise and my stay at the Accommodation Venue. In no event shall landlord’s total
+            liability to me for all damages, losses and causes of action whether in contract, tort
+            (including his own negligence) or under any other legal theory (including strict liability)
+            exceed the amount of rent payable or paid by me and corresponding to the Maintenance and
+            Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">11)</div>
+          <div class="col-11">To irrevocably and unconditionally release, cancel, and forever discharge
+            the Landlord and its directors, officers, employees, subsidiaries, affiliates, agents, and
+            representatives from any and all claims, complaints, causes of action, demands, damages,
+            obligations, liabilities, losses, promises, agreements, controversies, penalties, expenses,
+            and executions of any kind or nature whatsoever, whether known or unknown, actual or
+            potential, whether arising in law or in equity, which I may have, may have had, or may in
+            the future obtain, arising out of or relating to (i) the maintenance and repair works, (ii)
+            the Maintenance and Repair Notice and (iii) the underlying facts that have led to the
+            maintenance and repair works.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">12)</div>
+          <div class="col-11">to refrain from any disparagement, criticism, defamation, slander of the
+            Landlord, or tortious interference with the business of the Landlord. I further agrees I
+            will not disparage or publish or disseminate information, whether oral or written (which
+            includes, but is not limited to, statements made directly, indirectly or through any third
+            person on or through any online, social media, electronic, digital, or other media), that is
+            derogatory in any manner to the Landlord or its business or its reputation. I also agree to
+            remove any previously published disparagement, criticism, defamation, slander of the
+            Landlord whether oral or written (which includes, but is not limited to, statements made
+            directly, indirectly or through any third person on or through any online, social media,
+            electronic, digital, or other media), that is derogatory in any manner to any the Landlord
+            or its business or its reputation.</div>
+        </div>
+
+        <!-- #endregion -->
+
+        <!-- #region FOOTER -->
+        <div class="row">
+          <div class="col-12 text-left border border-secondary">
+            <input type="checkbox" name="agree" id="checkbox1modal2" value="2" class="mb-3"
+              onclick='handleClickTandC(this);'>
+            I consent &amp; agree
+            <br>
+            <span>Name : </span>
+          </div>
+        </div>
+        <!-- #endregion -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL3 -->
+<div id="myModal3" class="modal3" style="display: none;">
+  <div class="modal-content3"><span id="close3" class="close3">×</span>
+
+    <div id="pdf3">
+      <div class="container p-4">
+        <!-- #region HEADER -->
+        <div class="row">
+          <div class="col-12 text-center border border-secondary">
+            <p style="font-weight: bold;">CONSENT AND RELEASE FORM – OPTION 3</p>
+            <span>“I manage my own accommodation and receive financial compensation”</span>
+          </div>
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region MIDDLE SECTION -->
+        <div class="row">
+          <div class="col-12">
+            <p class="mt-5">
+              Reference is made to the Maintenance and Repair Notice dated <span id="field1modal3"
+                class="modalinputs"></span>, 2024.
+            </p>
+            <p>
+              I, <span id="field2modal3" class="modalinputs"></span>, a <span id="field3modal3"
+                class="modalinputs"></span> citizen (the “Tenant”), Tenant of unit <span id="field4modal3"
+                class="modalinputs"></span> located at
+              <span style="font-size: 16px;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+              (the “Premise”)
+              consent to the maintenance and repair works consisting of (such as but not limited to)
+              (i) addressing the waterproofing in wet areas and water supply lines, (ii) detecting and
+              treating mold formation and infestation and (iii) replacing any identified affected
+              surface during the Maintenance and Repair Period.
+            </p>
+            <p>
+              I hereby confirm that I have selected Option 3 according to which I accept to be in
+              charge of my own accommodation, at my own risks and costs, during the maintenance and
+              repair works.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Therefore, I accept the following as full and final compensation and settlement in
+              relation to the inconvenience caused by (i) the relocation and (ii) the maintenance and
+              repair works:
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-start">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              the Rent during the Maintenance and Repair Period will be waived in full by the Landlord
+              and the corresponding Utilities will be reimbursed using the following formula:
+              U=(Monthly Utility Bill )/31 x Maintenance and Repair Period.
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              One time payment of AED 7,200 as a gesture from the Landlord payable within one week
+              from completion of the maintenance and repair works
+              OR
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+          <div class="col-1 d-flex justify-content-end"> - </div>
+          <div class="col-11">
+            <p>
+              One month Rent free will be either (i) paid in cash within one week from completion of
+              the maintenance and repair works or (ii) granted as an extension to my existing lease
+              agreement.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>I agree and consent to:</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">1)</div>
+          <div class="col-11">vacate the Premise before the Maintenance and Repair Period start date
+            and understand that I shall not access the Premise during the Maintenance and Repair Period
+            without prior approval of the Landlord;
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">2)</div>
+          <div class="col-11">all disagreement in relation to, connected to or deriving from such
+            relocation and maintenance and repair works.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">3)</div>
+          <div class="col-11">grant access to the Premise to the Landlord’s nominated contractor(s)
+            during the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">4)</div>
+          <div class="col-11">facilitate the maintenance and repair works and not prevent or caused to
+            prevent the Landlord’s nominated contractor from performing or completing the maintenance
+            and repair works during the Maintenance and Repair Period. </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">5)</div>
+          <div class="col-11">the water and equipment OUTAGE in all the wet areas (such as but not
+            limited to WC, showers, kitchen, sinks etc) during the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row my-3">
+          <div class="col-12">I further understand and accept: </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">6)</div>
+          <div class="col-11">the assumption of risk and I expressly and voluntarily assume all risk of
+            personal injury or property damage sustained if I enter the Premise during the maintenance
+            and repair work whether such risk is foreseen or unforeseen, contemplated or not
+            contemplated and whether or not caused by the negligence or other fault of the Landlord or
+            the Landlord’s nominated contractor(s).
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">7)</div>
+          <div class="col-11">to remain responsible for removing any valuable items (laptops,
+            jewellery, money etc). The Landlord shall not be responsible for the loss of Property.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">8)</div>
+          <div class="col-11">To indemnify, defend and hold harmless the Landlord for any penalties,
+            losses, damages, costs and expenses (including attorney’s fees) arising out of or in
+            connection with me accessing the Premise (with or without the Landlord’s approval) during
+            the maintenance and repair works and any of my act or omission in relation to the
+            obstruction of the maintenance and repair works and/or the Landlord’s nominated
+            contractor(s).</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">9)</div>
+          <div class="col-11">that to the fullest extent permissible by law, in no event shall the
+            Landlord be liable to me for any incidental, consequential, or indirect damages arising out
+            of the maintenance and repair works and me accessing the Premise (with or without the
+            Landlord’s approval. In no event shall landlord’s total liability to me for all damages,
+            losses and causes of action whether in contract, tort (including his own negligence) or
+            under any other legal theory (including strict liability) exceed the amount of rent payable
+            or paid by me and corresponding to the Maintenance and Repair Period.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">10)</div>
+          <div class="col-11">To irrevocably and unconditionally release, cancel, and forever
+            discharge the Landlord and its directors, officers, employees, subsidiaries, affiliates,
+            agents, and representatives from any and all claims, complaints, causes of action, demands,
+            damages, obligations, liabilities, losses, promises, agreements, controversies, penalties,
+            expenses, and executions of any kind or nature whatsoever, whether known or unknown, actual
+            or potential, whether arising in law or in equity, which I may have, may have had, or may in
+            the future obtain, arising out of or relating to (i) the maintenance and repair works, (ii)
+            the Maintenance and Repair Notice and (iii) the underlying facts that have led to the
+            maintenance and repair works.</div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">11)</div>
+          <div class="col-11">
+            to refrain from any disparagement, criticism, defamation, slander of the Landlord, or
+            tortious interference with the business of the Landlord. I further agrees I will not
+            disparage or publish or disseminate information, whether oral or written (which includes,
+            but is not limited to, statements made directly, indirectly or through any third person on
+            or through any online, social media, electronic, digital, or other media), that is
+            derogatory in any manner to the Landlord or its business or its reputation. I also agree to
+            remove any previously published disparagement, criticism, defamation, slander of the
+            Landlord whether oral or written (which includes, but is not limited to, statements made
+            directly, indirectly or through any third person on or through any online, social media,
+            electronic, digital, or other media), that is derogatory in any manner to any the Landlord
+            or its business or its reputation.
+          </div>
+        </div>
+
+        <!-- #endregion -->
+
+        <!-- #region FOOTER -->
+        <div class="row">
+          <div class="col-12 text-left border border-secondary">
+            <input type="checkbox" name="agree" id="checkbox1modal3" value="3" class="mb-3"
+              onclick='handleClickTandC(this);'>
+            I consent &amp; agree
+            <br>
+            <span>Name : </span>
+          </div>
+        </div>
+        <!-- #endregion -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL4 -->
+<div id="myModal4" class="modal4" style="display: none;">
+  <div class="modal-content4"><span id="close4" class="close4">×</span>
+
+    <div id="pdf4">
+      <div class="container p-4">
+        <!-- #region HEADER -->
+        <div class="row">
+          <div class="col-12 text-center border border-secondary">
+            <p style="font-weight: bold;">CONSENT AND RELEASE FORM – OPTION 4</p>
+            <span>“I decide to early terminate my Lease Agreement”</span>
+          </div>
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region MIDDLE SECTION -->
+        <div class="row">
+          <div class="col-12">
+            <p class="mt-5">
+              Reference is made to the Maintenance and Repair Notice dated <span id="field1modal4"
+                class="modalinputs"></span>, 2024.
+            </p>
+            <p>
+              I, <span id="field2modal4" class="modalinputs"></span>, a <span id="field3modal4"
+                class="modalinputs"></span> citizen (the “Tenant”), Tenant of unit <span id="field4modal4"
+                class="modalinputs"></span> located at
+              <span style="font-size: 16px;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+              (the “Premise”)
+              consent to the maintenance and repair works consisting of (such as but not limited to)
+              (i) addressing the waterproofing in wet areas and water supply lines, (ii) detecting and
+              treating mold formation and infestation and (iii) replacing any identified affected
+              surface during the Maintenance and Repair Period.
+            </p>
+            <p>
+              I hereby confirm that I have selected Option 4 according to which I accept to:
+            </p>
+            <div class="row d-flex justify-content-start">
+              <div class="col-1 d-flex justify-content-end"> - </div>
+              <div class="col-11">
+                <p>
+                  Notify in writing the Landlord of my decision to vacate the Premise by no
+                  later than June 30th, 2024; and
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-start">
+              <div class="col-1 d-flex justify-content-end"> - </div>
+              <div class="col-11">
+                <p>
+                  Vacate the Premise by no later than August 31st, 2024.
+                </p>
+              </div>
+            </div>
+            <p>
+              Therefore, I accept the following as full and final compensation and settlement in
+              relation to (i) the inconvenience caused by the maintenance and repair works and (ii) my
+              decision to vacate earlier than the lease termination date:
+            </p>
+            <div class="row d-flex justify-content-start">
+              <div class="col-1 d-flex justify-content-end"> - </div>
+              <div class="col-11">
+                <p>
+                  The waiver by the Landlord of the Early Termination Penalty of 60 days and the
+                  administrative fee of AED 500 provided under the Lease Agreement. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-12">I further understand and accept: </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">1)</div>
+          <div class="col-11">To indemnify, defend and hold harmless the Landlord for any penalties,
+            losses, damages, costs and expenses (including attorney’s fees) arising out of or in
+            connection with any claim connected to or deriving from my decision to early terminate my
+            Lease Agreement pursuant to the Maintenance and Repairs Notice.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">2)</div>
+          <div class="col-11">
+            2) that to the fullest extent permissible by law, in no event shall the Landlord be liable
+            to me for any incidental, consequential, or indirect damages arising out of my decision to
+            early terminate my Lease Agreement and/or the maintenance and repair works. In no event
+            shall landlord’s total liability to me for all damages, losses and causes of action whether
+            in contract, tort (including his own negligence) or under any other legal theory (including
+            strict liability) exceed the amount of rent payable or paid by me and corresponding to the
+            anticipated Maintenance and Repair Period.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">3)</div>
+          <div class="col-11">
+            3) To irrevocably and unconditionally release, cancel, and forever discharge the Landlord
+            and its directors, officers, employees, subsidiaries, affiliates, agents, and
+            representatives from any and all claims, complaints, causes of action, demands, damages,
+            obligations, liabilities, losses, promises, agreements, controversies, penalties, expenses,
+            and executions of any kind or nature whatsoever, whether known or unknown, actual or
+            potential, whether arising in law or in equity, which I may have, may have had, or may in
+            the future obtain, arising out of or relating to (i) my decision to early terminate the
+            Lease Agreement, (ii) the Maintenance and Repair Notice and (iii) the underlying facts that
+            have led to the maintenance and repair works.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 d-flex justify-content-end">4)</div>
+          <div class="col-11">
+            4) to refrain from any disparagement, criticism, defamation, slander of the Landlord, or
+            tortious interference with the business of the Landlord. I further agrees I will not
+            disparage or publish or disseminate information, whether oral or written (which includes,
+            but is not limited to, statements made directly, indirectly or through any third person on
+            or through any online, social media, electronic, digital, or other media), that is
+            derogatory in any manner to the Landlord or its business or its reputation. I also agree to
+            remove any previously published disparagement, criticism, defamation, slander of the
+            Landlord whether oral or written (which includes, but is not limited to, statements made
+            directly, indirectly or through any third person on or through any online, social media,
+            electronic, digital, or other media), that is derogatory in any manner to any the Landlord
+            or its business or its reputation.
+          </div>
+        </div>
+
+        <!-- #endregion -->
+
+        <!-- #region FOOTER -->
+        <div class="row">
+          <div class="col-12 text-left border border-secondary">
+            <input type="checkbox" name="agree" id="checkbox1modal4" value="4" class="mb-3"
+              onclick='handleClickTandC(this);'>
+            I consent &amp; agree
+            <br>
+            <span>Name : </span>
+          </div>
+        </div>
+        <!-- #endregion -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
